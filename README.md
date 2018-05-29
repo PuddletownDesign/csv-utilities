@@ -5,7 +5,7 @@ A simple utility to manipulate and transform csv strings of data.
 ## Install
 
 ```bash
-npm i csv-util
+npm i csv-utilities
 ```
 
 ## Usage
