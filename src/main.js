@@ -105,6 +105,11 @@ const csvUtil = {
    */
   appendColumns: (csv, append) => {
     let array = csvUtil.csv2array(csv)
+
+    if (array.length !== append.length) {
+      return csv
+    }
+
     array.map((row, i) => {
       row.push(append[i])
     })

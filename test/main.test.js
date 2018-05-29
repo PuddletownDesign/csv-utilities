@@ -123,4 +123,7 @@ describe('# appendColumns', () => {
   it('Should return a csv string with the array columns appended on', () => {
     expect(fn(numbers, append)).to.equal('1, 2, 3, 5\n1, 2, 3, 6\n')
   })
+  it('Should return a the original csv if the arr and row count are not the same', () => {
+    expect(fn(numbers, [1, 5, 6])).to.equal('1, 2, 3\n1, 2, 3')
+  })
 })

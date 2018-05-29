@@ -55,7 +55,7 @@ const csvUtil = {
    * @param {string} csv - a CSV string
    * @return {string} csv - a CSV string
    */
-  sortRow: (csv) => {
+  sortColumns: (csv) => {
     let array = csvUtil.csv2array(csv);
     array.map(row => {
       row.sort();
@@ -107,6 +107,12 @@ const csvUtil = {
    */
   appendColumns: (csv, append) => {
     let array = csvUtil.csv2array(csv);
+
+    if (array.length !== append.length) {
+      console.error('your array and csv row counts are different lengths');
+      return csv
+    }
+
     array.map((row, i) => {
       row.push(append[i]);
     });
