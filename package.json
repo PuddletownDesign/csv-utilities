@@ -1,14 +1,14 @@
 {
-  "name": "csv-util",
+  "name": "csv-utilities",
   "version": "1.0.0",
-  "description": "",
-  "keywords": [],
+  "description": "A simple utility to manipulate and transform csv strings of data.",
+  "keywords": ["csv"],
   "author": "Brent",
   "license": "MIT",
   "main": "bundle.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/PuddletownDesign/csv-util"
+    "url": "https://github.com/PuddletownDesign/csv-utilities"
   },
   "standard": {
     "env": [
