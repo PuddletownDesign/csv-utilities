@@ -1,4 +1,6 @@
-# CSV Utility
+# CSV Utilities
+
+A simple utility to manipulate and transform csv strings of data.
 
 ## Install
 
