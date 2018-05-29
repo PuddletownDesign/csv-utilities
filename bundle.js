@@ -109,7 +109,6 @@ const csvUtil = {
     let array = csvUtil.csv2array(csv);
 
     if (array.length !== append.length) {
-      console.error('your array and csv row counts are different lengths');
       return csv
     }
 
