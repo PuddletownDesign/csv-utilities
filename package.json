@@ -1,0 +1,33 @@
+{
+  "name": "csv-util",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "Brent",
+  "license": "MIT",
+  "main": "bundle.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PuddletownDesign/csv-util"
+  },
+  "standard": {
+    "env": [
+      "mocha"
+    ]
+  },
+  "scripts": {
+    "build": "npm run clean && npm run test && npm run docs && npm run rollup",
+    "clean": "rimraf coverage docs bundle.js",
+    "docs": "rimraf docs && documentation build src/** -f html -o docs",
+    "rollup": "rollup -c",
+    "test": "rimraf coverage && nyc --reporter=lcov mocha || true && nyc report && rimraf .nyc_output"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "documentation": "^7.1.0",
+    "mocha": "^5.2.0",
+    "nyc": "^11.8.0",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.59.3"
+  }
+}
