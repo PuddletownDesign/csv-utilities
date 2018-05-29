@@ -100,7 +100,7 @@ const csvUtil = {
    * _Appends an array of columns into the csv_
    *
    * @param {string} csv - a csv string
-   * @param {array} array - an array of values equal in length to the csv rows
+   * @param {array} append - an array of values equal in length to the csv rows
    * @return {string} csv - a csv string with the values appended on each row
    */
   appendColumns: (csv, append) => {
