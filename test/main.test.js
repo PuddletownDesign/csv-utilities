@@ -16,6 +16,9 @@ describe('# csv2array', () => {
   it('should have the first element of the array be an array', () => {
     expect(fn(csv)[0]).to.be.an('array')
   })
+  it('first value of the first array should equal the first value of the csv', () => {
+    expect(fn(csv)[0][0]).to.deep.equal('brent')
+  })
 })
 
 /**
@@ -61,7 +64,7 @@ describe('# switchColumnsOrder', () => {
  * sortColumns
  */
 describe('# sortColumns', () => {
-  let fn = csvUtil.sortRow
+  let fn = csvUtil.sortColumns
   it('Should return a CSV string', () => {
     expect(fn(csv, 1, 2)).to.be.an('string')
   })
@@ -70,5 +73,54 @@ describe('# sortColumns', () => {
     expect(fn(csv, 1, 2)).to.equal(
       `brent, kittyboy, russ\nruss, ruth, ryland\n`
     )
+  })
+})
+
+/**
+ * reverseRows
+ */
+describe('# reverseRows', () => {
+  let fn = csvUtil.reverseRows
+  it('Should return a CSV string', () => {
+    expect(fn(csv)).to.be.an('string')
+  })
+  // use the csv string to create an array and then reverse it
+  it('Should reverse the order of all the rows', () => {
+    expect(fn(csv)).to.equal(
+      `ruth, russ, ryland\nbrent, russ, kittyboy\n`
+    )
+  })
+})
+
+/**
+ * reverseRows
+ */
+describe('# avgColumns', () => {
+  let fn = csvUtil.avgColumns
+  let numbers = `1, 2, 3\n1, 2, 3`
+
+  it('Should return an array', () => {
+    expect(fn(csv)).to.be.an('array')
+  })
+  // use the csv string to create an array and then reverse it
+  it('Should make an array with the averaged numbers', () => {
+    expect(fn(numbers)).to.deep.equal([2, 2])
+  })
+})
+
+/**
+ * reverseRows
+ */
+describe('# appendColumns', () => {
+  let fn = csvUtil.appendColumns
+  let numbers = `1, 2, 3\n1, 2, 3`
+  let append = [5, 6]
+
+  it('Should return an string', () => {
+    expect(fn(numbers, append)).to.be.an('string')
+  })
+  // use the csv string to create an array and then reverse it
+  it('Should return a csv string with the array columns appended on', () => {
+    expect(fn(numbers, append)).to.equal('1, 2, 3, 5\n1, 2, 3, 6\n')
   })
 })

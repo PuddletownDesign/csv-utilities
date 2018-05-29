@@ -50,15 +50,65 @@ const csvUtil = {
   },
 
   /**
-   * _Sort each of the columns lowest to highest or alphabetically_
+   * _Sort each of the rows lowest to highest or alphabetically_
    *
    * @param {string} csv - a CSV string
    * @return {string} csv - a CSV string
    */
-  sortColumns: (csv) => {
+  sortRow: (csv) => {
     let array = csvUtil.csv2array(csv);
     array.map(row => {
       row.sort();
+    });
+    return csvUtil.array2csv(array)
+  },
+
+  /**
+   * _Reverse each of the rows top to bottom_
+   *
+   * @param {string} csv - a CSV string
+   * @return {string} csv - a CSV string
+   */
+  reverseRows: (csv) => {
+    let array = csvUtil.csv2array(csv).reverse();
+    return csvUtil.array2csv(array)
+  },
+
+  /**
+   * _Averages the columns of each row and creates an array_
+   *
+   * __note: that all columns and rows in csv must be numeric__
+   *
+   * @param {string} csv - a CSV string
+   * @return {array} array - an array of the averaged column values
+   */
+  avgColumns: (csv) => {
+    let array = csvUtil.csv2array(csv);
+
+    let averages = [];
+    array.map((row) => {
+      let sum = 0;
+      let rowLength = row.length;
+      row.map((column, i) => {
+        sum += parseInt(column, 10);
+      });
+      let avg = sum / rowLength;
+      averages.push(avg);
+    });
+    return averages
+  },
+
+  /**
+   * _Appends an array of columns into the csv_
+   *
+   * @param {string} csv - a csv string
+   * @param {array} array - an array of values equal in length to the csv rows
+   * @return {string} csv - a csv string with the values appended on each row
+   */
+  appendColumns: (csv, append) => {
+    let array = csvUtil.csv2array(csv);
+    array.map((row, i) => {
+      row.push(append[i]);
     });
     csv = csvUtil.array2csv(array);
     return csv

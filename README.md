@@ -42,10 +42,57 @@ csv.switchColumnsOrder(csv, 1, 4)
 
 ### sortColumns
 
-Sorts each of the rows lowest to highest or alphabetically
+Sorts each column in a row lowest to highest or alphabetically
 
 ```javascript
 csv.sortColumns(csv)
 ```
 
-reverseRows (Top to bottom)
+### reverseRows (Top to bottom)
+
+Reverses the order of all the rows
+
+```javascript
+csv.reverseRows(csv)
+```
+
+### avgColumns
+
+Averages the numbers in each column in a row and creates an array
+
+```csv
+1, 2, 3
+2, 1, 3
+```
+
+outputs:
+
+```javascript
+[2 , 2]
+```
+
+### appendColumns
+
+Appends an array of columns into the csv
+
+appending this:
+
+```javascript
+[5, 6]
+```
+
+to this:
+
+```csv
+1, 2, 4
+2, 1, 3
+```
+
+outputs:
+
+```csv
+1, 2, 3, 5
+2, 1, 3, 6
+```
+
+### appendRows

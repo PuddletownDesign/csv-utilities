@@ -55,9 +55,39 @@
               
                 
                 <li><a
-                  href='#sortcolumns'
+                  href='#sortrow'
                   class="">
-                  sortColumns
+                  sortRow
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#reverserows'
+                  class="">
+                  reverseRows
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#avgcolumns'
+                  class="">
+                  avgColumns
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#appendcolumns'
+                  class="">
+                  appendColumns
                   
                 </a>
                 
@@ -304,18 +334,18 @@
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='sortcolumns'>
-      sortColumns
+    <h3 class='fl m0' id='sortrow'>
+      sortRow
     </h3>
     
     
   </div>
   
 
-  <p><em>Sort each of the columns lowest to highest or alphabetically</em></p>
+  <p><em>Sort each of the rows lowest to highest or alphabetically</em></p>
 
 
-  <div class='pre p1 fill-light mt0'>sortColumns(csv: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
+  <div class='pre p1 fill-light mt0'>sortRow(csv: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
   
   
 
@@ -349,6 +379,231 @@
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
         csv - a CSV string
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='reverserows'>
+      reverseRows
+    </h3>
+    
+    
+  </div>
+  
+
+  <p><em>Reverse each of the rows top to bottom</em></p>
+
+
+  <div class='pre p1 fill-light mt0'>reverseRows(csv: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>csv</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    a CSV string
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
+        csv - a CSV string
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='avgcolumns'>
+      avgColumns
+    </h3>
+    
+    
+  </div>
+  
+
+  <p><em>Averages the columns of each row and creates an array</em></p>
+<p><strong>note: that all columns and rows in csv must be numeric</strong></p>
+
+
+  <div class='pre p1 fill-light mt0'>avgColumns(csv: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">array</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>csv</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    a CSV string
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">array</a></code>:
+        array - an array of the averaged column values
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='appendcolumns'>
+      appendColumns
+    </h3>
+    
+    
+  </div>
+  
+
+  <p><em>Appends an array of columns into the csv</em></p>
+
+
+  <div class='pre p1 fill-light mt0'>appendColumns(csv: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, append: any, array: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">array</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>csv</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    a csv string
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>append</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>array</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">array</a>)</code>
+	    an array of values equal in length to the csv rows
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
+        csv - a csv string with the values appended on each row
 
       
     
