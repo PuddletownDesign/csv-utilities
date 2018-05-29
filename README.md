@@ -30,7 +30,9 @@ csv.array2csv(array)
 
 ### switchColumnsOrder
 
-switchColumnsOrder(csvString, column1, column2)
+Switches the order of two columns in the csv string
+
+`switchColumnsOrder(csvString, column1, column2)`
 
 ```javascript
 csv.switchColumnsOrder(csv, 1, 4)
@@ -38,6 +40,12 @@ csv.switchColumnsOrder(csv, 1, 4)
 // outputs a csv string with the columns 1 and 4 switched
 ```
 
-sortColumns
+### sortColumns
+
+Sorts each of the rows lowest to highest or alphabetically
+
+```javascript
+csv.sortColumns(csv)
+```
 
 reverseRows (Top to bottom)

@@ -1,6 +1,6 @@
 const csvUtil = {
   /**
-   * Create an array from a CSV string
+   * _Create an array from a CSV string_
    *
    * @param {string} csv - a csv string
    * @return {array} csv - a multidimensional array from the csv string
@@ -12,7 +12,7 @@ const csvUtil = {
   },
 
   /**
-   * Create an CSV string from a multidimensional array
+   * _Create an CSV string from a multidimensional array_
    *
    * @param {array} array - a multidimensional array
    * @return {string} array - a csv string
@@ -24,7 +24,9 @@ const csvUtil = {
   },
 
   /**
-   * Reorder 2 columns in a CSV string
+   * _Reorder 2 columns in a CSV string_
+   *
+   * Converts a CSV into an array to perform operation and then converts back into a CSV
    *
    * @param {string}  csv - a csv string
    * @param {number} c1 - the first column to switch with the second
@@ -43,6 +45,21 @@ const csvUtil = {
         processed[i] = row
       })
     return csvUtil.array2csv(processed)
+  },
+
+  /**
+   * _Sort each of the rows lowest to highest or alphabetically_
+   *
+   * @param {string} csv - a CSV string
+   * @return {string} csv - a CSV string
+   */
+  sortRow: (csv) => {
+    let array = csvUtil.csv2array(csv)
+    array.map(row => {
+      row.sort()
+    })
+    csv = csvUtil.array2csv(array)
+    return csv
   }
 }
 

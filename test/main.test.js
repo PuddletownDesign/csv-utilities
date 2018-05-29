@@ -5,7 +5,10 @@ const csvUtil = require('../src/main')
 let csv = `brent, russ, kittyboy
 ruth, russ, ryland`
 
-describe('csv2array', () => {
+/**
+ * csv2array
+ */
+describe('# csv2array', () => {
   let fn = csvUtil.csv2array
   it('Should return an array', () => {
     expect(fn(csv)).to.be.an('array')
@@ -15,12 +18,15 @@ describe('csv2array', () => {
   })
 })
 
-describe('array2csv', () => {
+/**
+ * array2csv
+ */
+describe('# array2csv', () => {
   let fn = csvUtil.array2csv
 
   let array = [
-    [ 'russ', 'brent', 'kittyboy' ],
-    [ 'russ', 'ruth', 'ryland' ]
+    [ '1', '2', '3' ],
+    [ '4', '5', '6' ]
   ]
 
   // use the csv string to create an array and then reverse it
@@ -35,13 +41,34 @@ describe('array2csv', () => {
   })
 })
 
-describe('switchColumnsOrder', () => {
+/**
+ * switchColumnsOrder
+ */
+describe('# switchColumnsOrder', () => {
   let fn = csvUtil.switchColumnsOrder
-
+  it('Should return a CSV string', () => {
+    expect(fn(csv, 1, 2)).to.be.an('string')
+  })
   // use the csv string to create an array and then reverse it
   it('Should switch columns 1 and 2', () => {
     expect(fn(csv, 1, 2)).to.equal(
       `russ, brent, kittyboy\nruss, ruth, ryland\n`
+    )
+  })
+})
+
+/**
+ * sortColumns
+ */
+describe('# sortColumns', () => {
+  let fn = csvUtil.sortRow
+  it('Should return a CSV string', () => {
+    expect(fn(csv, 1, 2)).to.be.an('string')
+  })
+  // use the csv string to create an array and then reverse it
+  it('Should order the columns', () => {
+    expect(fn(csv, 1, 2)).to.equal(
+      `brent, kittyboy, russ\nruss, ruth, ryland\n`
     )
   })
 })

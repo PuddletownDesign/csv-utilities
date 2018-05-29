@@ -2,10 +2,10 @@
 
 const csvUtil = {
   /**
-   * Create an array from a CSV string
+   * _Create an array from a CSV string_
    *
-   * @param {string} - a csv string
-   * @return {array} - a multidimensional array from the csv string
+   * @param {string} csv - a csv string
+   * @return {array} csv - a multidimensional array from the csv string
    */
   csv2array: (csv) => {
     return csv
@@ -14,10 +14,10 @@ const csvUtil = {
   },
 
   /**
-   * Create an CSV string from a multidimensional array
+   * _Create an CSV string from a multidimensional array_
    *
-   * @param {array} - a multidimensional array
-   * @return {string} - a csv string
+   * @param {array} array - a multidimensional array
+   * @return {string} array - a csv string
    */
   array2csv: (array) => {
     return array
@@ -26,10 +26,14 @@ const csvUtil = {
   },
 
   /**
-   * Reorder the columns in a CSV string
+   * _Reorder 2 columns in a CSV string_
    *
-   * @param {string} - csvString
-   * @return {string} - csvString
+   * Converts a CSV into an array to perform operation and then converts back into a CSV
+   *
+   * @param {string}  csv - a csv string
+   * @param {number} c1 - the first column to switch with the second
+   * @param {number} c2 - the second column to switch with the first
+   * @return {string} processed - a csv string
    */
   switchColumnsOrder: (csv, c1, c2) => {
     c1--;
@@ -43,6 +47,21 @@ const csvUtil = {
         processed[i] = row;
       });
     return csvUtil.array2csv(processed)
+  },
+
+  /**
+   * _Sort each of the columns lowest to highest or alphabetically_
+   *
+   * @param {string} csv - a CSV string
+   * @return {string} csv - a CSV string
+   */
+  sortColumns: (csv) => {
+    let array = csvUtil.csv2array(csv);
+    array.map(row => {
+      row.sort();
+    });
+    csv = csvUtil.array2csv(array);
+    return csv
   }
 };
 
