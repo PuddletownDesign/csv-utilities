@@ -10,91 +10,92 @@ npm i csv-utilities
 
 ## Usage
 
-### csv2array
+### Convert a CSV to an array
+
+Probably the quickest most useful function
 
 ```javascript
-const csv = require('csv-util')
+let csv = `1, 2, 3
+3, 2, 1`
 
-csv.csv2array(csv)
+csvUtil.csv2array(csv)
 
-// returns a mutlidimensional array
+// outputs:
+[ [ '1', '2', '3' ],
+  [ '3', '2', '1' ] ]
 ```
 
-### array2CSV
+### Convert an array to a CSV string
 
 ```javascript
-const csv = require('csv-util')
+let array = [
+  ['1', '2', '3'],
+  ['3', '2', '1']
+]
 
-csv.array2csv(array)
+csvUtil.array2csv(array)
 
-// returns a csv string
-```
-
-### switchColumnsOrder
-
-Switches the order of two columns in the csv string
-
-`switchColumnsOrder(csvString, column1, column2)`
-
-```javascript
-csv.switchColumnsOrder(csv, 1, 4)
-
-// outputs a csv string with the columns 1 and 4 switched
-```
-
-### sortColumns
-
-Sorts each column in a row lowest to highest or alphabetically
-
-```javascript
-csv.sortColumns(csv)
-```
-
-### reverseRows (Top to bottom)
-
-Reverses the order of all the rows
-
-```javascript
-csv.reverseRows(csv)
-```
-
-### avgColumns
-
-Averages the numbers in each column in a row and creates an array
-
-```csv
+// outputs:
 1, 2, 3
-2, 1, 3
+3, 2, 1
 ```
 
-outputs:
+### Switch the column orders with switchColumnsOrder
 
 ```javascript
-[2 , 2]
+let csv = `1, 2, 3
+3, 2, 1`
+
+// switching columns 1 with 2
+csvUtil.switchColumnsOrder(csv, 1, 2)
+
+// outputs:
+2, 1, 3
+2, 3, 1
 ```
 
-### appendColumns
-
-Appends an array of columns into the csv
-
-appending this:
+### Reverse rows, bottom to top
 
 ```javascript
-[5, 6]
+let csv = `1, 2, 3
+3, 2, 1`
+
+csvUtil.reverseRows(csv)
+
+// outputs:
+3, 2, 1
+1, 2, 3
 ```
 
-to this:
+### Creates an array of each rows average
 
-```csv
-1, 2, 4
-2, 1, 3
+```javascript
+let csv = `1, 2, 3
+3, 2, 1`
+
+csvUtil.avgColumns(csv)
+
+// outputs:
+[ 2, 2 ]
 ```
 
-outputs:
+### Appends an array of columns on to the csv string
 
-```csv
+```javascript
+let csv = `1, 2, 3
+1, 2, 3`
+
+let append = [5, 6]
+
+csvUtil.appendColumns(csv, append)
+
+// outputs:
 1, 2, 3, 5
-2, 1, 3, 6
+1, 2, 3, 6
 ```
 
 ### appendRows
+
+```javascript
+// coming in 1.0.1
+```
